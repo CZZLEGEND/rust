@@ -199,18 +199,7 @@ impl fmt::Display for ConstEvalError {
     }
 }
 
-impl Error for ConstEvalError {
-    fn description(&self) -> &str {
-        use self::ConstEvalError::*;
-        match *self {
-            NeedsRfc(_) => "this feature needs an rfc before being allowed inside constants",
-        }
-    }
-
-    fn cause(&self) -> Option<&dyn Error> {
-        None
-    }
-}
+impl Error for ConstEvalError {}
 
 // Extra machine state for CTFE, and the Machine instance
 pub struct CompileTimeInterpreter<'mir, 'tcx> {
