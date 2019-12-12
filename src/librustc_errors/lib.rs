@@ -251,11 +251,7 @@ impl fmt::Display for ExplicitBug {
     }
 }
 
-impl error::Error for ExplicitBug {
-    fn description(&self) -> &str {
-        "The parser has encountered an internal bug"
-    }
-}
+impl error::Error for ExplicitBug {}
 
 pub use diagnostic::{Diagnostic, SubDiagnostic, DiagnosticStyledString, DiagnosticId};
 pub use diagnostic_builder::DiagnosticBuilder;

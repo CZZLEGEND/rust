@@ -255,7 +255,7 @@ fn main() {
         main_with_result(format, &dst)
     });
     if let Err(e) = result {
-        panic!("{}", e.description());
+        panic!("{}", e.to_string());
     }
 }
 
